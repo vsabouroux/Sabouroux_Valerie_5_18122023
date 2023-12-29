@@ -36,6 +36,11 @@ body {
   text-decoration: none;
   color: #000;
 }
+/*Ajout trait sous les liens*/
+.nav a:hover {
+  text-decoration: underline;
+  color: #07f546;
+}
 .social-link img {
   width: 20px;
   gap: 20px;
@@ -88,12 +93,11 @@ body {
   font-size: 14px;
 }
 
-#gallery {
-  /*	min-height: 100vh; */
-}
 .title {
   text-align: center;
   padding-block: 2em;
+  /*Suppression margin*/
+  margin: 0;
 }
 .gallery .nav {
   justify-content: center;
@@ -241,7 +245,7 @@ input[type="submit"] {
 }
 /*Ajout style footer*/
 .footer-container {
-  font-size: 24px;
+  font-size: 14px;
   display: flex;
   justify-content: center;
 }
