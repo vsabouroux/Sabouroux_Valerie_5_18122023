@@ -110,6 +110,8 @@ body {
 }
 .nav-pills .nav-link {
   color: #000;
+  /*Ajout curseur sur liens catégories*/
+  cursor: pointer;
 }
 .item-column {
   position: relative;
