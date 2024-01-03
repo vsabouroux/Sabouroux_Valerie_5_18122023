@@ -2,6 +2,7 @@
 <!--Ajout language-->
 <html lang="fr">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/bootstrap/bootstrap.css" />
     <link rel="stylesheet" href="./assets/style.css" />
@@ -11,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
       rel="stylesheet"
     />
-    <meta charset="UTF-8" />
+  
     <!--Ajout defer pour permettre à la page de charger complètement avant d'executer les scripts-->
     <script src="./assets/bootstrap/bootstrap.bundle.js" defer></script>
     <script
@@ -27,8 +28,10 @@
     <title>Nina Carducci photographe professionnel</title>
   </head>
   <body>
-    <!--j'aurais mis ici une balise "header"???-->
+    <!--j'aurais mis ici une balise "header" qui aurait été fermée après
+      à la fin de la div "header"???-->
     <div class="top-header">
+      <!--h3 alors que pas de h1 ? hierarchie à revoir je mettrais ici h1-->
       <h3 class="name">Nina Carducci</h3>
       <div class="nav">
         <ul>
@@ -132,10 +135,11 @@
     </div>
     <div id="about">
       <div class="picture left">
-        <!--Ajout alt texte alternatif aux photos-->
+        <!--Ajouts alt texte alternatif aux photos-->
         <img src="./assets/images/nina.png" alt="Nina Carducci photographe" />
       </div>
       <div id="about-me">
+        <!--h1-->
         <h3 class="about-me__title">A propos de moi</h3>
         <h6 class="about-me__introduction">
           Devenir photographe était pour moi une évidence. Comme si j’y étais
@@ -154,7 +158,9 @@
         </p>
       </div>
     </div>
+    <!--une section ici pour Portfolio une autre pour services ?-->
     <div id="gallery">
+        <!--h1-->
       <h3 class="title">Portfolio</h3>
       <div class="container py-3">
         <!--Ajout balise pour gestion boutons catégories ?-->
@@ -232,10 +238,12 @@
       </div>
     </div>
     <div id="services">
+        <!--h1-->
       <h3 class="title">Mes services</h3>
       <div class="container">
         <div class="service">
           <div class="service__description">
+              <!--h2-->
             <h3>Shooting photo</h3>
             <p>
               Pour capturer vos moments les plus précieux et garder un souvenir
@@ -244,6 +252,7 @@
             </p>
           </div>
           <div class="service__price">
+              <!--h3-->
             <h4>350€/demi journée</h4>
             <span>Matériel, déplacement inclus</span>
           </div>
@@ -279,6 +288,7 @@
     <div class="quote">
       <figure>
         <blockquote>
+          <!--p ? et non un h1-->
           <h1 class="quote__text">
             De manière inconsciente, je crois, je guette un regard, une
             expression, des traits ou une nostalgie capable de résumer ou plus
@@ -294,21 +304,23 @@
         <div class="form-container">
           <h3>Une question ? Une demande de devis ?</h3>
           <p>
-            N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures
+            N’hésitez pas à m’écrire ! Je vous répondrai en moins de 24 heures
           </p>
-          <form action="" method="post">
-            <label>Nom</label>
+
+          <!--Ajouts pour meilleure accessibilité-->
+          <form action="" method="post" aria-labelledby="form-title">
+            <label for="nom">Nom (requis)</label>
             <input type="text" name="nom" id="nom" />
-            <label>Email</label>
+            <label for="email">Email</label>
             <input type="email" name="email" id="email" />
-            <label>Message</label>
+            <label for="message">Message</label>
             <textarea
               name="message"
               id="message"
               cols="30"
               rows="10"
             ></textarea>
-            <input type="submit" value="Envoyer" />
+            <input type="submit" value="Envoyer" alt="Envoyer le formulaire" />
           </form>
         </div>
         <div class="picture right">
