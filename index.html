@@ -4,7 +4,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.css" />
+    <!--Ajout d'un title & description pour améliorer le référencement naturel-->
+    <title>Nina Carducci photographe professionnel</title>
+    <meta name="description" content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe.">
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,27 +15,25 @@
       href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
       rel="stylesheet"
     />
-  
+<!--meta pour reseau sociaux + script pour schema.org-->
     <!--Ajout defer pour permettre à la page de charger complètement avant d'executer les scripts-->
-    <script src="./assets/bootstrap/bootstrap.bundle.js" defer></script>
+    <script src="./assets/bootstrap/bootstrap.bundle.min.js" ></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="./assets/maugallery.js" defer></script>
-    <script src="./assets/scripts.js" defer></script>
 
-    <!--Ajout d'un title pour améliorer le référencement naturel-->
-    <title>Nina Carducci photographe professionnel</title>
+    ></script>
+    <script src="./assets/maugallery.js" ></script>
+    <script src="./assets/scripts.js" ></script>
   </head>
   <body>
-    <!--j'aurais mis ici une balise "header" qui aurait été fermée après
-      à la fin de la div "header"???-->
+    <!--Ajout balises "header" "nav" "section" "footer"-->
+    <header> 
     <div class="top-header">
       <!--h3 alors que pas de h1 ? hierarchie à revoir je mettrais ici h1-->
-      <h3 class="name">Nina Carducci</h3>
+      <h1 class="name">Nina Carducci</h1>
+      <nav> 
       <div class="nav">
         <ul>
           <li><a href="#about">À propos</a></li>
@@ -60,8 +61,9 @@
           </li>
         </ul>
       </div>
+    </nav>
     </div>
-    <!--une div "header" ???-->
+    
     <div id="header">
       <div
         id="carouselExampleIndicators"
@@ -133,44 +135,52 @@
         </button>
       </div>
     </div>
-    <div id="about">
-      <div class="picture left">
-        <!--Ajouts alt texte alternatif aux photos-->
-        <img src="./assets/images/nina.png" alt="Nina Carducci photographe" />
+  </header>
+    <!--Restructuration par ajout de SECTIONS ou on laisse les div ???-->
+    <section>
+      <div id="about">
+        <div class="picture left">
+          <!--Ajouts alt texte alternatif aux photos-->
+          <img src="./assets/images/nina.png" alt="Nina Carducci photographe" />
+        </div>
+        <div id="about-me">
+          <!--h2 à la place de h3-->
+          <h2 class="about-me__title">A propos de moi</h2>
+          <!--p à la place de h6-->
+          <p class="about-me__introduction">
+            Devenir photographe était pour moi une évidence. Comme si j’y étais
+            prédestiné. Saisir un moment, une émotion, une situation, un
+            endroit, une lumière et les rendre immortels, voilà ce qui me fait
+            vibrer.
+          </p>
+          <p>
+            Nous passons notre vie à chercher le bonheur, et lorsque nous y
+            touchons, nous n’avons qu’une envie : le figer au travers de
+            photographies pour le savourer avec les personnes qui sont
+            importantes à nos yeux, ou le partager au plus grand nombre. C’est
+            ce que je vous propose : saisir ces merveilleux moments au travers
+            de mon regard, mon approche, ma technique. Rendre ces moments
+            immortels, afin que vous puissiez y puiser de l’amour, du bonheur,
+            de la tendresse et de lumière à chaque fois que vous poserez les
+            yeux sur vos photos.
+          </p>
+        </div>
       </div>
-      <div id="about-me">
-        <!--h1-->
-        <h3 class="about-me__title">A propos de moi</h3>
-        <h6 class="about-me__introduction">
-          Devenir photographe était pour moi une évidence. Comme si j’y étais
-          prédestiné. Saisir un moment, une émotion, une situation, un endroit,
-          une lumière et les rendre immortels, voilà ce qui me fait vibrer.
-        </h6>
-        <p>
-          Nous passons notre vie à chercher le bonheur, et lorsque nous y
-          touchons, nous n’avons qu’une envie : le figer au travers de
-          photographies pour le savourer avec les personnes qui sont importantes
-          à nos yeux, ou le partager au plus grand nombre. C’est ce que je vous
-          propose : saisir ces merveilleux moments au travers de mon regard, mon
-          approche, ma technique. Rendre ces moments immortels, afin que vous
-          puissiez y puiser de l’amour, du bonheur, de la tendresse et de
-          lumière à chaque fois que vous poserez les yeux sur vos photos.
-        </p>
-      </div>
-    </div>
-    <!--une section ici pour Portfolio une autre pour services ?-->
+    </section>
+    <!--Section ici pour Portfolio-->
+    <section> 
     <div id="gallery">
-        <!--h1-->
-      <h3 class="title">Portfolio</h3>
+      <!--h2 au lieu de h3-->
+      <h2 class="title">Portfolio</h2>
       <div class="container py-3">
         <!--Ajout balise pour gestion boutons catégories ?-->
-        <div class="filtres">
-          
+        <div class="filtres"></div>
+
         <div class="gallery" style="display: none">
           <img
             data-gallery-tag="Concert"
             class="gallery-item"
-            src="./assets/images/gallery/concerts/aaron-paul-concert.jpg"
+            src="./assets/images/gallery/concerts/aaron-paul-concert.webp"
             alt="concert de aaron paul"
           />
           <img
@@ -188,31 +198,31 @@
           <img
             data-gallery-tag="Mariages"
             class="gallery-item"
-            src="./assets/images/gallery/mariage/hannah-busing-wedding.jpg"
+            src="./assets/images/gallery/mariage/hannah-busing-wedding.webp"
             alt="mains tendues qui se touchent presque"
           />
           <img
             data-gallery-tag="Portrait"
             class="gallery-item"
-            src="./assets/images/gallery/portraits/ade-tunji-portrait.jpg"
+            src="./assets/images/gallery/portraits/ade-tunji-portrait.webp"
             alt="homme en plein soleil fermant fort les yeux"
           />
           <img
             data-gallery-tag="Mariages"
             class="gallery-item"
-            src="./assets/images/gallery/mariage/wedding-photo-by-jakob-owens.jpg"
+            src="./assets/images/gallery/mariage/wedding-photo-by-jakob-owens.webp"
             alt="couple de mariés souriant se tenant par le bras "
           />
           <img
             data-gallery-tag="Portrait"
             class="gallery-item"
-            src="./assets/images/gallery/portraits/woman-portrait-by-nino-van-prattenburg.jpg"
+            src="./assets/images/gallery/portraits/woman-portrait-by-nino-van-prattenburg.webp"
             alt="jeune femme portant des lunettes regarde vers le bas"
           />
           <img
             data-gallery-tag="Concert"
             class="gallery-item"
-            src="./assets/images/gallery/concerts/austin-neill-concert.jpg"
+            src="./assets/images/gallery/concerts/austin-neill-concert.webp"
             alt="austin neill concert"
           />
           <img
@@ -225,25 +235,27 @@
       </div>
       <div class="quote">
         <figure>
-          <blockquote>
-            <h1 class="quote__text">
-              Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou
-              qu’un fait est traduit en photo, il cesse d’être un fait pour
-              devenir une opinion. L’inexactitude n’existe pas en photographie.
-              Toutes les photos sont exactes. Aucune d’elles n’est la vérité.
-            </h1>
+          <!--suppression h1 et intégration class dans balise "blockquote"-->
+          <blockquote class="quote__text">
+            Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou
+            qu’un fait est traduit en photo, il cesse d’être un fait pour
+            devenir une opinion. L’inexactitude n’existe pas en photographie.
+            Toutes les photos sont exactes. Aucune d’elles n’est la vérité.
           </blockquote>
-          <figcaption class="quote__author">- Richard Avedon</figcaption>
+          <!--le nom de l'auteur de la citation n'est pas un schéma donc pas besoin de balise "figcaption remplacée par p"-->
+          <p class="quote__author">Richard Avedon</p>
         </figure>
       </div>
     </div>
+  </section>
+
+  <section> 
     <div id="services">
-        <!--h1-->
-      <h3 class="title">Mes services</h3>
+      <!--h2 au lieu de h3-->
+      <h2 class="title">Mes services</h2>
       <div class="container">
         <div class="service">
           <div class="service__description">
-              <!--h2-->
             <h3>Shooting photo</h3>
             <p>
               Pour capturer vos moments les plus précieux et garder un souvenir
@@ -252,8 +264,8 @@
             </p>
           </div>
           <div class="service__price">
-              <!--h3-->
-            <h4>350€/demi journée</h4>
+            <!--p au lieu de h4-->
+            <p class="price">350€/demi journée</p>
             <span>Matériel, déplacement inclus</span>
           </div>
         </div>
@@ -266,7 +278,7 @@
             </p>
           </div>
           <div class="service__price">
-            <h4>50€/photo</h4>
+            <p class="price">50€/photo</p>
             <span>2 AR par photo</span>
           </div>
         </div>
@@ -279,7 +291,7 @@
             </p>
           </div>
           <div class="service__price">
-            <h4>400€ album A4</h4>
+            <p class="price">400€ album A4</p>
             <span>30 pages recto/verso</span>
           </div>
         </div>
@@ -289,20 +301,23 @@
       <figure>
         <blockquote>
           <!--p ? et non un h1-->
-          <h1 class="quote__text">
+          <p class="quote__text">
             De manière inconsciente, je crois, je guette un regard, une
             expression, des traits ou une nostalgie capable de résumer ou plus
             exactement de révéler une vie
-          </h1>
+          </p>
         </blockquote>
         <!--besoin de balise figcaption ici ??? j'aurais juste mis <p>-->
-        <figcaption class="quote__author">- Richard Avedon</figcaption>
+        <figcaption class="quote__author">Richard Avedon</figcaption>
       </figure>
     </div>
+  </section>
+
+  <section>
     <div id="contact">
       <div class="container">
         <div class="form-container">
-          <h3>Une question ? Une demande de devis ?</h3>
+          <h3 id="form-title">Une question ? Une demande de devis ?</h3>
           <p>
             N’hésitez pas à m’écrire ! Je vous répondrai en moins de 24 heures
           </p>
@@ -320,7 +335,11 @@
               cols="30"
               rows="10"
             ></textarea>
-            <input type="submit" value="Envoyer" alt="Envoyer le formulaire" />
+            <input
+              type="submit"
+              value="Envoyer"
+              aria-label="Envoyer le formulaire"
+            />
           </form>
         </div>
         <div class="picture right">
@@ -328,13 +347,16 @@
         </div>
       </div>
     </div>
+  </section>
+
     <!--Ajout footer pour coordonnées de l'entreprise-->
-    <footer class="footer-container">
-      <p>
+    <footer>
+      <p class="footer-container">
         Nina Carducci - photographe professionnel - 68 avenue Alsace Lorraine
         33200 Bordeaux - Téléphone : +(33) 05 56 67 78 89 - Horaires : du lundi
         au vendredi de 10h à 19h00
       </p>
     </footer>
+
   </body>
 </html>

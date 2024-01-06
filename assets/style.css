@@ -39,7 +39,7 @@ body {
 /*Ajout trait sous les liens*/
 .nav a:hover {
   text-decoration: underline;
-  color: #07f546;
+  color: #e5975f;
 }
 .social-link img {
   width: 20px;
@@ -151,6 +151,7 @@ body {
 .quote__text {
   font-family: Spectral;
   font-style: italic;
+  font-size: 30px;
   font-weight: 300;
 }
 .quote__author {
@@ -191,6 +192,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
+}
+/*Ajout style aux prix*/
+.price{
+  font-size: 28px;
 }
 
 #contact {
