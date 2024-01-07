@@ -2,6 +2,7 @@
   $.fn.mauGallery = function (options) {
     var options = $.extend($.fn.mauGallery.defaults, options);
     var tagsCollection = [];
+    
     return this.each(function () {
       $.fn.mauGallery.methods.createRowWrapper($(this));
       if (options.lightBox) {
@@ -11,7 +12,7 @@
           options.navigation
         );
       }
-      $.fn.mauGallery.listeners(options);
+      $.fn.mauGallery.listeners(options, currentCategory);//la fonction listener "embarqueaussi la catégorie actuelle"
 
       $(this)
         .children(".gallery-item")
@@ -49,23 +50,46 @@
     tagsPosition: "bottom",
     navigation: true,
   };
-  $.fn.mauGallery.listeners = function (options) {
+  var currentCategory="concerts"; //catégorie par défaut
+  $.fn.mauGallery.listeners = function (options, currentCategory) {
+
     $(".gallery-item").on("click", function () {
-      if (options.lightBox && $(this).prop("tagName") === "IMG") {
-        $.fn.mauGallery.methods.openLightBox($(this), options.lightboxId);
-      } else {
-        return;
+      const clickedCategory = $(this).data("gallery-tag");
+   
+        if (clickedCategory && clickedCategory !== currentCategory) {
+            currentCategory = clickedCategory;
+            console.log("Current category: ", currentCategory)
+            console.log("Clicked category: ", clickedCategory);
+            
+            currentImageIndex = 0;
+            console.log("Current image index: ", currentImageIndex);
+            // updateLightboxImage();
+        } else {
+          if (options.lightBox && $(this).prop("tagName") === "IMG") {
+            $.fn.mauGallery.methods.openLightBox($(this), options.lightboxId);
+          } else {
+            return;
       }
+    }
     });
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
-    $(".gallery").on("click", ".mg-prev", () =>
-      $.fn.mauGallery.methods.prevImage(options.lightboxId)
-    );
-    $(".gallery").on("click", ".mg-next", () =>
-      $.fn.mauGallery.methods.nextImage(options.lightboxId)
-    );
+    /*ajout fonction pour l'écoute d'événements*/
+    $(".gallery").on("click", ".mg-prev", function () { 
+      $.fn.mauGallery.methods.prevImage(options.lightboxId, currentCategory);
+      /*contrôle*/
+      console.log("Prev Image Clicked");
+      console.log("Updated Image Source:", $(".lightboxImage").attr("src"));
+    });
+    $(".gallery").on("click", ".mg-next", function () {
+      $.fn.mauGallery.methods.nextImage(options.lightboxId, currentCategory);
+       /*contrôle*/
+      console.log("Next Image Clicked");
+      console.log("Updated Image Source:", $(".lightboxImage").attr("src"));
+    });
+
   };
+
   $.fn.mauGallery.methods = {
     createRowWrapper(element) {
       if (!element.children().first().hasClass("row")) {
@@ -150,7 +174,7 @@
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
-    nextImage() {
+    nextImage(lightboxId,currentCategory) {
       let activeImage = null;
       $("img.gallery-item").each(function () {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -167,7 +191,7 @@
         });
       } else {
         $(".item-column").each(function () {
-          if ($(this).children("img").data("gallery-tag") === activeTag) {
+          if ($(this).children("img").data("gallery-tag") === currentCategory) {
             imagesCollection.push($(this).children("img"));
           }
         });
@@ -205,6 +229,56 @@
                     </div>
                 </div>
             </div>`);
+      /**Ajout logique d'ecoute evt click ds modale */
+      if (navigation) {
+        const lightbox = $(`#${lightboxId ? lightboxId : "galleryLightbox"}`);
+        const concertsImages = [
+          "./assets/images/gallery/concerts/aaron-paul-concert.webp",
+          "./assets/images/gallery/concerts/austin-neill-concert.webp"
+        ]; 
+    
+        const entrepriseImages =[
+          "./assets/images/gallery/entreprise/businessman-by-ali-morshedlou.webp",
+          "./assets/images/gallery/entreprise/jason-goodman-firm.webp",
+          "./assets/images/gallery/entreprise/photo-by-mateus-campos-felipe.webp"
+        ]
+
+        const mariageImages =[
+          "./assets/images/gallery/mariage/hannah-busing-wedding.webp",
+          "./assets/images/gallery/mariage/wedding-photo-by-jakob-owens.webp"
+        ]
+
+        const portraitsImages=[
+          "./assets/images/gallery/portraits/ade-tunji-portrait.webp",
+          "./assets/images/gallery/portraits/woman-portrait-by-nino-van-prattenburg.webp"
+        ]
+        let currentImageIndex = 0;
+      
+
+         //Création catégories ici car images dans HTML
+        const categories = {
+          concerts: concertsImages,
+          mariage: mariageImages,
+          entreprise:entrepriseImages,
+          portraits:portraitsImages
+      };
+        $(".mg-prev").on("click", function () {
+          currentImageIndex =
+            (currentImageIndex - 1 + categories[currentCategory].length) % categories[currentCategory].length;
+          updateLightboxImage();
+        });
+
+        $(".mg-next").on("click", function () {
+          currentImageIndex = (currentImageIndex + 1) % categories[currentCategory].length;
+          updateLightboxImage();
+        });
+       
+        
+        function updateLightboxImage() {
+          const imgElement = lightbox.find(".lightboxImage");
+          imgElement.attr("src", categories[currentCategory][currentImageIndex]);
+        }
+      }
     },
     showItemTags(gallery, position, tags) {
       var tagItems =
@@ -242,4 +316,5 @@
       });
     },
   };
+
 })(jQuery);

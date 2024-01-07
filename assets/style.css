@@ -141,6 +141,11 @@ body {
   font-size: 24px;
 }
 
+/*Centrage des images dans la modale*/
+.lightboxImage{
+ justify-content: center;
+}
+
 .quote {
   font-family: "Spectral";
   font-style: italic;
