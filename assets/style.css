@@ -105,8 +105,9 @@ body {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #beb45a;
-  border-radius: 0;
+  /*Amélioration du contraste pour une meilleure accessibilité #beb45a*/
+  background-color: #847706;
+  border-radius: 5px;
 }
 .nav-pills .nav-link {
   color: #000;
@@ -139,11 +140,12 @@ body {
   align-items: center;
   display: flex;
   font-size: 24px;
+  font-weight: bold;
 }
 
-/*Centrage des images dans la modale*/
 .lightboxImage{
- justify-content: center;
+ width: 100%; /* Positionnment images dans la modale*/
+ 
 }
 
 .quote {

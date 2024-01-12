@@ -4,10 +4,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Ajout meta balises pour Facebook-->
+    <meta property="og:title" content="Nina Carducci photographe professionnel" />
+    <meta property="og:url" content="http://www.ninacarducci.io"/>
+    <!-- <meta property="og:site_name" content="ninacarducci.io"/> -->
+    <meta property="og:description" content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe ">
+
+    <!--pb avec le lien url http://www.ninacarducci.io/assets/images/nina.webp-->
+    <meta property="og:image" content="./assets/images/nina.webp"/>
+
+    <!--Ajout meta balises pour X Twitter-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nina Carducci photographe professionnel">
+    <meta name="twitter:site" content="ninacarducci.io">
+    <meta name="twitter:description" content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe.">
+
+
+    <!-- Ajout meta balise robot pour dire aux moteurs de recherche d'indexer la page du site mais MANQUE fichier robots.txt!
+    <meta name="robots" content="index" /> -->
+
+    <!-- Cache la page pendant 1 heure pour améliorer la perf du site-->
+    <meta http-equiv="cache-control" content="max-age=3600">
+
     <!--Ajout d'un title & description pour améliorer le référencement naturel-->
     <title>Nina Carducci photographe professionnel</title>
     <meta name="description" content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe.">
-    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" /> et à la place -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!-- https://getbootstrap.com/docs/5.1/getting-started/download/#cdn-via-jsdelivr -->
+    
     <link rel="stylesheet" href="./assets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,16 +41,20 @@
       rel="stylesheet"
     />
 <!--meta pour reseau sociaux + script pour schema.org-->
-    <!--Ajout defer pour permettre à la page de charger complètement avant d'executer les scripts-->
-    <script src="./assets/bootstrap/bootstrap.bundle.min.js" ></script>
+    <!--PROBLEME AVEC defer pour permettre à la page de charger complètement avant d'executer les scripts-->
+    <!-- <script src="./assets/bootstrap/bootstrap.bundle.min.js" ></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
 
     ></script>
-    <script src="./assets/maugallery.js" ></script>
-    <script src="./assets/scripts.js" ></script>
+    <script src="./assets/maugallery.js"></script>
+    <script src="./assets/scripts.js"></script>
   </head>
   <body>
     <!--Ajout balises "header" "nav" "section" "footer"-->
@@ -146,6 +175,13 @@
         <div id="about-me">
           <!--h2 à la place de h3-->
           <h2 class="about-me__title">A propos de moi</h2>
+          <!--Ajout balisage structuré schema.org pour aider les moteurs de
+          recherche à comprendre le contenu-->
+          <div itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Nina Carducci</span>
+            <span itemprop="jobTitle">Photographe professionnel</span>
+            <img src="./assets/images/nina.webp" itemprop="image" alt="Nina Carducci"/>
+        </div>
           <!--p à la place de h6-->
           <p class="about-me__introduction">
             Devenir photographe était pour moi une évidence. Comme si j’y étais
@@ -173,8 +209,6 @@
       <!--h2 au lieu de h3-->
       <h2 class="title">Portfolio</h2>
       <div class="container py-3">
-        <!--Ajout balise pour gestion boutons catégories ?-->
-        <div class="filtres"></div>
 
         <div class="gallery" style="display: none">
           <img
@@ -184,19 +218,19 @@
             alt="concert de aaron paul"
           />
           <img
-            data-gallery-tag="Entreprises"
+            data-gallery-tag="Entreprise"
             class="gallery-item"
             src="./assets/images/gallery/entreprise/businessman-by-ali-morshedlou.webp"
             alt="businessman photographed by Ali Morshedlou"
           />
           <img
-            data-gallery-tag="Entreprises"
+            data-gallery-tag="Entreprise"
             class="gallery-item"
             src="./assets/images/gallery/entreprise/jason-goodman-firm.webp"
             alt="deux jeunes femmes souriantes assises à une table de réunion"
           />
           <img
-            data-gallery-tag="Mariages"
+            data-gallery-tag="Mariage"
             class="gallery-item"
             src="./assets/images/gallery/mariage/hannah-busing-wedding.webp"
             alt="mains tendues qui se touchent presque"
@@ -208,7 +242,7 @@
             alt="homme en plein soleil fermant fort les yeux"
           />
           <img
-            data-gallery-tag="Mariages"
+            data-gallery-tag="Mariage"
             class="gallery-item"
             src="./assets/images/gallery/mariage/wedding-photo-by-jakob-owens.webp"
             alt="couple de mariés souriant se tenant par le bras "
@@ -226,7 +260,7 @@
             alt="austin neill concert"
           />
           <img
-            data-gallery-tag="Entreprises"
+            data-gallery-tag="Entreprise"
             class="gallery-item"
             src="./assets/images/gallery/entreprise/photo-by-mateus-campos-felipe.webp"
             alt="jeune femme  assise à un bureau avec un ordinateur portable, regarde sur le côté rie"
@@ -307,7 +341,6 @@
             exactement de révéler une vie
           </p>
         </blockquote>
-        <!--besoin de balise figcaption ici ??? j'aurais juste mis <p>-->
         <figcaption class="quote__author">Richard Avedon</figcaption>
       </figure>
     </div>

@@ -2,7 +2,8 @@
   $.fn.mauGallery = function (options) {
     var options = $.extend($.fn.mauGallery.defaults, options);
     var tagsCollection = [];
-    
+    let currentCategory;
+   
     return this.each(function () {
       $.fn.mauGallery.methods.createRowWrapper($(this));
       if (options.lightBox) {
@@ -12,7 +13,7 @@
           options.navigation
         );
       }
-      $.fn.mauGallery.listeners(options, currentCategory);//la fonction listener "embarqueaussi la catégorie actuelle"
+      $.fn.mauGallery.listeners(options, currentCategory); //la fonction listener "embarqueaussi la catégorie actuelle"
 
       $(this)
         .children(".gallery-item")
@@ -50,32 +51,31 @@
     tagsPosition: "bottom",
     navigation: true,
   };
-  var currentCategory="concerts"; //catégorie par défaut
-  $.fn.mauGallery.listeners = function (options, currentCategory) {
 
+  $.fn.mauGallery.listeners = function (options, currentCategory) {
     $(".gallery-item").on("click", function () {
       const clickedCategory = $(this).data("gallery-tag");
-   
-        if (clickedCategory && clickedCategory !== currentCategory) {
-            currentCategory = clickedCategory;
-            console.log("Current category: ", currentCategory)
-            console.log("Clicked category: ", clickedCategory);
-            
-            currentImageIndex = 0;
-            console.log("Current image index: ", currentImageIndex);
-            // updateLightboxImage();
+
+      if (clickedCategory && clickedCategory !== currentCategory) {
+        currentCategory = clickedCategory;
+        console.log("Current category: ", currentCategory);
+        console.log("Clicked category: ", clickedCategory);
+
+        currentImageIndex = 0;
+        console.log("Current image index: ", currentImageIndex);
+        // updateLightboxImage(); //Appel pour mettre à jour l'image dans la modale
+      } else {
+        if (options.lightBox && $(this).prop("tagName") === "IMG") {
+          $.fn.mauGallery.methods.openLightBox($(this), options.lightboxId);
         } else {
-          if (options.lightBox && $(this).prop("tagName") === "IMG") {
-            $.fn.mauGallery.methods.openLightBox($(this), options.lightboxId);
-          } else {
-            return;
+          return;
+        }
       }
-    }
     });
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
     /*ajout fonction pour l'écoute d'événements*/
-    $(".gallery").on("click", ".mg-prev", function () { 
+    $(".gallery").on("click", ".mg-prev", function () {
       $.fn.mauGallery.methods.prevImage(options.lightboxId, currentCategory);
       /*contrôle*/
       console.log("Prev Image Clicked");
@@ -83,14 +83,19 @@
     });
     $(".gallery").on("click", ".mg-next", function () {
       $.fn.mauGallery.methods.nextImage(options.lightboxId, currentCategory);
-       /*contrôle*/
+      /*contrôle*/
       console.log("Next Image Clicked");
       console.log("Updated Image Source:", $(".lightboxImage").attr("src"));
     });
-
+    /*Définition de la couleur de fond du bouton cliqué*/
+    $(".gallery").on("click", ".nav-link", function () {
+      $(".nav-link").css("background-color", ""); // Réinitialiser la couleur de fond de tous les boutons
+      $(this).css("background-color", "#847706"); // Définir la couleur de fond du bouton cliqué
+    });
   };
 
   $.fn.mauGallery.methods = {
+  
     createRowWrapper(element) {
       if (!element.children().first().hasClass("row")) {
         element.append('<div class="gallery-items-row row"></div>');
@@ -141,13 +146,16 @@
     },
     prevImage() {
       let activeImage = null;
+      let imagesCollection = [];
+      // Ajout de la variable currentImageIndex pour suivre l'index de l'image dans la modale
+      // let currentImageIndex = 0;
+
       $("img.gallery-item").each(function () {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
         }
       });
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
-      let imagesCollection = [];
       if (activeTag === "all") {
         $(".item-column").each(function () {
           if ($(this).children("img").length) {
@@ -173,8 +181,9 @@
         imagesCollection[index] ||
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
+      
     },
-    nextImage(lightboxId,currentCategory) {
+    nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function () {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -207,7 +216,7 @@
       next = imagesCollection[index] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
-    createLightBox(gallery, lightboxId, navigation) {
+    createLightBox(gallery, lightboxId, navigation,currentCategory) {
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
       }" tabindex="-1" role="dialog" aria-hidden="true">
@@ -232,11 +241,35 @@
       /**Ajout logique d'ecoute evt click ds modale */
       if (navigation) {
         const lightbox = $(`#${lightboxId ? lightboxId : "galleryLightbox"}`);
+       
+        function updateLightboxImage() {
+          let currentImageIndex = 0;
+          const imgElement = lightbox.find(".lightboxImage");
+          imgElement.attr(
+            "src",
+            categories[currentCategory][currentImageIndex]
+          );
+          $(".mg-prev").on("click", function () {
+            currentImageIndex =
+              (currentImageIndex - 1 + categories[currentCategory].length) %
+              categories[currentCategory].length;
+            updateLightboxImage();
+          });
+  
+          $(".mg-next").on("click", function () {
+            currentImageIndex =
+              (currentImageIndex + 1) % categories[currentCategory].length;
+            updateLightboxImage();
+          });
+      
+        };
+        updateLightboxImage;
+      
         const concertsImages = [
           "./assets/images/gallery/concerts/aaron-paul-concert.webp",
           "./assets/images/gallery/concerts/austin-neill-concert.webp"
-        ]; 
-    
+        ];
+
         const entrepriseImages =[
           "./assets/images/gallery/entreprise/businessman-by-ali-morshedlou.webp",
           "./assets/images/gallery/entreprise/jason-goodman-firm.webp",
@@ -252,32 +285,15 @@
           "./assets/images/gallery/portraits/ade-tunji-portrait.webp",
           "./assets/images/gallery/portraits/woman-portrait-by-nino-van-prattenburg.webp"
         ]
-        let currentImageIndex = 0;
       
 
-         //Création catégories ici car images dans HTML
-        const categories = {
-          concerts: concertsImages,
-          mariage: mariageImages,
-          entreprise:entrepriseImages,
-          portraits:portraitsImages
-      };
-        $(".mg-prev").on("click", function () {
-          currentImageIndex =
-            (currentImageIndex - 1 + categories[currentCategory].length) % categories[currentCategory].length;
-          updateLightboxImage();
-        });
-
-        $(".mg-next").on("click", function () {
-          currentImageIndex = (currentImageIndex + 1) % categories[currentCategory].length;
-          updateLightboxImage();
-        });
-       
-        
-        function updateLightboxImage() {
-          const imgElement = lightbox.find(".lightboxImage");
-          imgElement.attr("src", categories[currentCategory][currentImageIndex]);
-        }
+        // Création catégories ici car images dans HTML
+          const categories = {
+            concerts: concertsImages,
+            mariage: mariageImages,
+            entreprise:entrepriseImages,
+            portraits:portraitsImages
+        };
       }
     },
     showItemTags(gallery, position, tags) {
@@ -316,5 +332,4 @@
       });
     },
   };
-
 })(jQuery);
