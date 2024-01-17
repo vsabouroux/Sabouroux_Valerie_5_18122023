@@ -62,7 +62,7 @@
         console.log("Current category: ", currentCategory);
         console.log("Clicked category: ", clickedCategory);
 
-        currentImageIndex = 0;
+        // currentImageIndex = 0;
         console.log("Current image index: ", currentImageIndex);
         updateLightboxImage(options); //Appel pour mettre à jour l'image dans la modale
       } else {
