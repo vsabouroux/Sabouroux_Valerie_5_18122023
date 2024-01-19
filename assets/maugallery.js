@@ -67,7 +67,7 @@
     );
     //Définition de la couleur de fond du bouton de catégorie cliqué
     $(".gallery").on("click",".nav-link", function(){
-      $(".nav-link").css("background-color",""); //réinitialise la couleur dde fond de tous les boutons
+      $(".nav-link").css("background-color",""); //réinitialise la couleur de fond de tous les boutons
       $(this).css("background-color","#847706"); //définit la couleur de fond du bouton cliqué
     });
   };
@@ -125,7 +125,7 @@
         .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
-    //Ajustement fonctions pour que l'ui puisse naviguer dans la modale lorsqu'il clique sur une photo
+    //Ajustement fonctions pour que l'UI puisse naviguer dans la modale lorsqu'il clique sur une photo
     prevImage(lightboxId) {
       let activeImage = $(`#${lightboxId}`).find(".lightboxImage");
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
