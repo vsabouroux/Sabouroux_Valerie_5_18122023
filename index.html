@@ -2,33 +2,53 @@
 <!--Ajout language-->
 <html lang="fr">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Ajout meta balises pour Facebook-->
-    <meta property="og:title" content="Nina Carducci photographe professionnel" />
-    <meta property="og:url" content="http://www.ninacarducci.io"/>
+    <meta
+      property="og:title"
+      content="Nina Carducci photographe professionnel"
+    />
+    <meta property="og:url" content="http://www.ninacarducci.io" />
     <!-- <meta property="og:site_name" content="ninacarducci.io"/> -->
-    <meta property="og:description" content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe ">
+    <meta
+      property="og:description"
+      content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe "
+    />
 
     <!--pb avec le lien url http://www.ninacarducci.io/assets/images/nina.webp-->
-    <meta property="og:image" content="./assets/images/nina.webp"/>
+    <meta property="og:image" content="./assets/images/nina.webp" />
 
     <!--Ajout meta balises pour X Twitter-->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Nina Carducci photographe professionnel">
-    <meta name="twitter:site" content="ninacarducci.io">
-    <meta name="twitter:description" content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe.">
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Nina Carducci photographe professionnel"
+    />
+    <meta name="twitter:site" content="ninacarducci.io" />
+    <meta
+      name="twitter:description"
+      content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe."
+    />
 
     <!-- Cache la page pendant 1 heure pour améliorer la perf du site-->
-    <meta http-equiv="cache-control" content="max-age=3600">
+    <meta http-equiv="cache-control" content="max-age=3600" />
 
     <!--Ajout d'un title & description pour améliorer le référencement naturel-->
     <title>Nina Carducci - photographe professionnel</title>
-    <meta name="description" content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe.">
+    <meta
+      name="description"
+      content="Nina Carducci, immortalise vos moments importants grâce à son talent de photographe."
+    />
     <!-- <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" /> et à la place -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!-- https://getbootstrap.com/docs/5.1/getting-started/download/#cdn-via-jsdelivr -->
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- https://getbootstrap.com/docs/5.1/getting-started/download/#cdn-via-jsdelivr -->
+
     <link rel="stylesheet" href="./assets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,12 +56,18 @@
       href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
       rel="stylesheet"
     />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <!--Utilisation fichiers .min pour minifier-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="./assets/maugallery.js"></script>
     <script src="./assets/scripts.js"></script>
@@ -49,7 +75,7 @@
     <!-- script pour améliorer l'expérience UI (schema.org)-->
     <script type="application/ld+json">
       {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Nina Carducci photographe professionnel",
         "address": {
@@ -57,145 +83,150 @@
           "streetAddress": " 68, avenue Alsace Lorraine",
           "addressLocality": "Bordeaux",
           "postalCode": "33200",
-          "addressRegion" : "Nouvelle Aquitaine",
+          "addressRegion": "Nouvelle Aquitaine",
           "addressCountry": "FR"
         },
         "telephone": "+(33) 05 56 67 78 89",
-        "openingHours": "Mo, Tu, We, Th, Fr 10:00-19:00",
+        "openingHours": ["Mo, Tu, We, Th, Fr 10:00-19:00"],
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 44.8466732,
-          "longitude":-0.6065805
+          "longitude": -0.6065805
         },
         "image": "./assets/images/nina.webp",
         "url": "http://www.ninacarducci.io"
       }
-      </script>
+    </script>
   </head>
   <body>
     <!--Ajout balises "header" "nav" "section" "footer"-->
-    <header> 
-    <div class="top-header">
-      <!--h3 alors que pas de h1 ? hierarchie revue-->
-      <h1 class="name">Nina Carducci</h1>
-      <nav> 
-      <div class="nav">
-        <ul>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#gallery">Galerie</a></li>
-          <li><a href="#services">Service</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
-            <a
-              class="social-link"
-              href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
-              target="_blank"
-              ><img
-                src="assets/images/instagram.webp"
-                alt="logo reseau social instagram"
-            /></a>
-          </li>
-          <li>
-            <!--Ajout lien reseau social X-->
-            <a
-              class="social-link"
-              href="https://www.twitter.com/cologirl49"
-              target="_blank"
-              ><img src="assets/images/X.webp" alt="logo réseau social X"
-            /></a>
-          </li>
-          <li>
-            <!--Ajout lien reseau social FACEBOOK-->
-            <a
-              class="social-link"
-              href="https://www.facebook.com/profile.php?id=61551904838249"
-              target="_blank"
-              ><img src="assets/images/facebook.webp" alt="logo réseau social Facebook--"
-            /></a>
-          </li>
-        </ul>
+    <header>
+      <div class="top-header">
+        <!--h3 alors que pas de h1 ? hierarchie revue-->
+        <h1 class="name">Nina Carducci</h1>
+        <nav>
+          <div class="nav">
+            <ul>
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#gallery">Galerie</a></li>
+              <li><a href="#services">Service</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li>
+                <a
+                  class="social-link"
+                  href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
+                  target="_blank"
+                  ><img
+                    src="assets/images/instagram.webp"
+                    alt="logo reseau social instagram"
+                /></a>
+              </li>
+              <li>
+                <!--Ajout lien reseau social X-->
+                <a
+                  class="social-link"
+                  href="https://www.twitter.com/cologirl49"
+                  target="_blank"
+                  ><img src="assets/images/X.webp" alt="logo réseau social X"
+                /></a>
+              </li>
+              <li>
+                <!--Ajout lien reseau social FACEBOOK-->
+                <a
+                  class="social-link"
+                  href="https://www.facebook.com/profile.php?id=61551904838249"
+                  target="_blank"
+                  ><img
+                    src="assets/images/facebook.webp"
+                    alt="logo réseau social Facebook--"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </nav>
-    </div>
-    
-    <div id="header">
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="./assets/images/slider/ryoji-iwata.webp"
-              class="d-block w-100"
-              alt="Homme de dos en costume portant une sacoche à la main droite qui traverse une rue"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./assets/images/slider/nicholas-green.webp"
-              class="d-block w-100"
-              alt="foule de jeunes joviale"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./assets/images/slider/edward-cisneros.webp"
-              class="d-block w-100"
-              alt="mariés dansant et s'embrassant au milieu du public les applaudissant"
-            />
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
+
+      <div id="header">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./assets/images/slider/ryoji-iwata.webp"
+                class="d-block w-100"
+                alt="Homme de dos en costume portant une sacoche à la main droite qui traverse une rue"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/slider/nicholas-green.webp"
+                class="d-block w-100"
+                alt="foule de jeunes joviale"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/slider/edward-cisneros.webp"
+                class="d-block w-100"
+                alt="mariés dansant et s'embrassant au milieu du public les applaudissant"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
     <!--Restructuration par ajout de SECTIONS (pas de suppression de div)-->
     <section>
       <div id="about">
         <div class="picture left">
           <!--Ajouts alt texte alternatif aux photos-->
-          <img src="./assets/images/nina.webp" alt="Nina Carducci photographe" />
+          <img
+            src="./assets/images/nina.webp"
+            alt="Nina Carducci photographe"
+          />
         </div>
         <div id="about-me">
           <!--h2 à la place de h3-->
@@ -222,181 +253,181 @@
       </div>
     </section>
     <!--Section ici pour Portfolio-->
-    <section> 
-    <div id="gallery">
-      <!--h2 au lieu de h3-->
-      <h2 class="title">Portfolio</h2>
-      <div class="container py-3">
+    <section>
+      <div id="gallery">
+        <!--h2 au lieu de h3-->
+        <h2 class="title">Portfolio</h2>
+        <div class="container py-3">
+          <div class="gallery" style="display: none">
+            <img
+              data-gallery-tag="Concert"
+              class="gallery-item"
+              src="./assets/images/gallery/concerts/aaron-paul-concert.webp"
+              alt="concert de aaron paul"
+            />
+            <img
+              data-gallery-tag="Entreprise"
+              class="gallery-item"
+              src="./assets/images/gallery/entreprise/businessman-by-ali-morshedlou.webp"
+              alt="businessman photographed by Ali Morshedlou"
+            />
+            <img
+              data-gallery-tag="Entreprise"
+              class="gallery-item"
+              src="./assets/images/gallery/entreprise/jason-goodman-firm.webp"
+              alt="deux jeunes femmes souriantes assises à une table de réunion"
+            />
+            <img
+              data-gallery-tag="Mariage"
+              class="gallery-item"
+              src="./assets/images/gallery/mariage/hannah-busing-wedding.webp"
+              alt="mains tendues qui se touchent presque"
+            />
+            <img
+              data-gallery-tag="Portrait"
+              class="gallery-item"
+              src="./assets/images/gallery/portraits/ade-tunji-portrait.webp"
+              alt="homme en plein soleil fermant fort les yeux"
+            />
+            <img
+              data-gallery-tag="Mariage"
+              class="gallery-item"
+              src="./assets/images/gallery/mariage/wedding-photo-by-jakob-owens.webp"
+              alt="couple de mariés souriant se tenant par le bras "
+            />
+            <img
+              data-gallery-tag="Portrait"
+              class="gallery-item"
+              src="./assets/images/gallery/portraits/woman-portrait-by-nino-van-prattenburg.webp"
+              alt="jeune femme portant des lunettes regarde vers le bas"
+            />
+            <img
+              data-gallery-tag="Concert"
+              class="gallery-item"
+              src="./assets/images/gallery/concerts/austin-neill-concert.webp"
+              alt="austin neill concert"
+            />
+            <img
+              data-gallery-tag="Entreprise"
+              class="gallery-item"
+              src="./assets/images/gallery/entreprise/photo-by-mateus-campos-felipe.webp"
+              alt="jeune femme  assise à un bureau avec un ordinateur portable, regarde sur le côté rie"
+            />
+          </div>
+        </div>
+        <div class="quote">
+          <figure>
+            <!--suppression h1 et intégration class dans balise "blockquote"-->
+            <blockquote class="quote__text">
+              Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou
+              qu’un fait est traduit en photo, il cesse d’être un fait pour
+              devenir une opinion. L’inexactitude n’existe pas en photographie.
+              Toutes les photos sont exactes. Aucune d’elles n’est la vérité.
+            </blockquote>
+            <figcaption class="quote__author">Richard Avedon</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-        <div class="gallery" style="display: none">
-          <img
-            data-gallery-tag="Concert"
-            class="gallery-item"
-            src="./assets/images/gallery/concerts/aaron-paul-concert.webp"
-            alt="concert de aaron paul"
-          />
-          <img
-            data-gallery-tag="Entreprise"
-            class="gallery-item"
-            src="./assets/images/gallery/entreprise/businessman-by-ali-morshedlou.webp"
-            alt="businessman photographed by Ali Morshedlou"
-          />
-          <img
-            data-gallery-tag="Entreprise"
-            class="gallery-item"
-            src="./assets/images/gallery/entreprise/jason-goodman-firm.webp"
-            alt="deux jeunes femmes souriantes assises à une table de réunion"
-          />
-          <img
-            data-gallery-tag="Mariage"
-            class="gallery-item"
-            src="./assets/images/gallery/mariage/hannah-busing-wedding.webp"
-            alt="mains tendues qui se touchent presque"
-          />
-          <img
-            data-gallery-tag="Portrait"
-            class="gallery-item"
-            src="./assets/images/gallery/portraits/ade-tunji-portrait.webp"
-            alt="homme en plein soleil fermant fort les yeux"
-          />
-          <img
-            data-gallery-tag="Mariage"
-            class="gallery-item"
-            src="./assets/images/gallery/mariage/wedding-photo-by-jakob-owens.webp"
-            alt="couple de mariés souriant se tenant par le bras "
-          />
-          <img
-            data-gallery-tag="Portrait"
-            class="gallery-item"
-            src="./assets/images/gallery/portraits/woman-portrait-by-nino-van-prattenburg.webp"
-            alt="jeune femme portant des lunettes regarde vers le bas"
-          />
-          <img
-            data-gallery-tag="Concert"
-            class="gallery-item"
-            src="./assets/images/gallery/concerts/austin-neill-concert.webp"
-            alt="austin neill concert"
-          />
-          <img
-            data-gallery-tag="Entreprise"
-            class="gallery-item"
-            src="./assets/images/gallery/entreprise/photo-by-mateus-campos-felipe.webp"
-            alt="jeune femme  assise à un bureau avec un ordinateur portable, regarde sur le côté rie"
-          />
+    <section>
+      <div id="services">
+        <!--restructuration titres h2 avant h3 avant h4-->
+        <h2 class="title">Mes services</h2>
+        <div class="container">
+          <div class="service">
+            <div class="service__description">
+              <h3>Shooting photo</h3>
+              <p>
+                Pour capturer vos moments les plus précieux et garder un
+                souvenir impérissable. Je me déplace en Île-de-France pour
+                réaliser vos photos.
+              </p>
+            </div>
+            <div class="service__price">
+              <h4 class="price">350€/demi journée</h4>
+              <span>Matériel, déplacement inclus</span>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service__description">
+              <h3>Retouches</h3>
+              <p>
+                Vous souhaitez retoucher vos photos pour un résultat
+                professionnel ? Bénéficier d’un rendu optimal pour vos
+                publications
+              </p>
+            </div>
+            <div class="service__price">
+              <h4 class="price">50€/photo</h4>
+              <span>2 AR par photo</span>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service__description">
+              <h3>Album photos</h3>
+              <p>
+                Partagez avec vos proches et vos clients les photos des moments
+                partagés ensemble à travers un album photo personnalisé
+              </p>
+            </div>
+            <div class="service__price">
+              <h4 class="price">400€ album A4</h4>
+              <span>30 pages recto/verso</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="quote">
         <figure>
-          <!--suppression h1 et intégration class dans balise "blockquote"-->
-          <blockquote class="quote__text">
-            Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou
-            qu’un fait est traduit en photo, il cesse d’être un fait pour
-            devenir une opinion. L’inexactitude n’existe pas en photographie.
-            Toutes les photos sont exactes. Aucune d’elles n’est la vérité.
+          <blockquote>
+            <!--p ? et non un h1-->
+            <p class="quote__text">
+              De manière inconsciente, je crois, je guette un regard, une
+              expression, des traits ou une nostalgie capable de résumer ou plus
+              exactement de révéler une vie
+            </p>
           </blockquote>
           <figcaption class="quote__author">Richard Avedon</figcaption>
         </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section> 
-    <div id="services">
-      <!--restructuration titres h2 avant h3 avant h4-->
-      <h2 class="title">Mes services</h2>
-      <div class="container">
-        <div class="service">
-          <div class="service__description">
-            <h3>Shooting photo</h3>
+    <section>
+      <div id="contact">
+        <div class="container">
+          <div class="form-container">
+            <h3 id="form-title">Une question ? Une demande de devis ?</h3>
             <p>
-              Pour capturer vos moments les plus précieux et garder un souvenir
-              impérissable. Je me déplace en Île-de-France pour réaliser vos
-              photos
+              N’hésitez pas à m’écrire ! Je vous répondrai en moins de 24 heures
             </p>
+
+            <!--Ajouts pour meilleure accessibilité-->
+            <form action="" method="post" aria-labelledby="form-title">
+              <label for="nom">Nom (requis)</label>
+              <input type="text" name="nom" id="nom" />
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <input
+                type="submit"
+                value="Envoyer"
+                aria-label="Envoyer le formulaire"
+              />
+            </form>
           </div>
-          <div class="service__price">
-            <h4 class="price">350€/demi journée</h4>
-            <span>Matériel, déplacement inclus</span>
-          </div>
-        </div>
-        <div class="service">
-          <div class="service__description">
-            <h3>Retouches</h3>
-            <p>
-              Vous souhaitez retoucher vos photos pour un résultat professionnel
-              ? Bénéficier d’un rendu optimal pour vos publications
-            </p>
-          </div>
-          <div class="service__price">
-            <h4 class="price">50€/photo</h4>
-            <span>2 AR par photo</span>
-          </div>
-        </div>
-        <div class="service">
-          <div class="service__description">
-            <h3>Album photos</h3>
-            <p>
-              Partagez avec vos proches et vos clients les photos des moments
-              partagés ensemble à travers un album photo personnalisé
-            </p>
-          </div>
-          <div class="service__price">
-            <h4 class="price">400€ album A4</h4>
-            <span>30 pages recto/verso</span>
+          <div class="picture right">
+            <img src="./assets/images/camera.webp" alt="camera" />
           </div>
         </div>
       </div>
-    </div>
-    <div class="quote">
-      <figure>
-        <blockquote>
-          <!--p ? et non un h1-->
-          <p class="quote__text">
-            De manière inconsciente, je crois, je guette un regard, une
-            expression, des traits ou une nostalgie capable de résumer ou plus
-            exactement de révéler une vie
-          </p>
-        </blockquote>
-        <figcaption class="quote__author">Richard Avedon</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section>
-    <div id="contact">
-      <div class="container">
-        <div class="form-container">
-          <h3 id="form-title">Une question ? Une demande de devis ?</h3>
-          <p>
-            N’hésitez pas à m’écrire ! Je vous répondrai en moins de 24 heures
-          </p>
-
-          <!--Ajouts pour meilleure accessibilité-->
-          <form action="" method="post" aria-labelledby="form-title">
-            <label for="nom">Nom (requis)</label>
-            <input type="text" name="nom" id="nom" />
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
-            <label for="message">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"
-            ></textarea>
-            <input
-              type="submit"
-              value="Envoyer"
-              aria-label="Envoyer le formulaire"
-            />
-          </form>
-        </div>
-        <div class="picture right">
-          <img src="./assets/images/camera.webp" alt="camera" />
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <!--Ajout footer pour coordonnées de l'entreprise-->
     <footer>
@@ -406,6 +437,5 @@
         au vendredi de 10h à 19h00
       </p>
     </footer>
-
   </body>
 </html>
